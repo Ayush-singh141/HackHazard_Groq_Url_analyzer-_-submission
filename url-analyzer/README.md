@@ -51,9 +51,9 @@ A powerful web application that allows users to analyze any website URL and chat
 3. Create a `.env` file in the backend directory with the following variables:
    ```
    PORT=5000
-   MONGODB_URI=mongodb+srv://ayushsinghgaur2100:ayush@cluster0.uifkvuq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+   MONGODB_URI="your_mongodb_uri"
    JWT_SECRET=url_analyzer_secret_key
-   GROQ_API_KEY=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
+   GROQ_API_KEY="your_api_key"
    ```
 
 ### Running the Application
