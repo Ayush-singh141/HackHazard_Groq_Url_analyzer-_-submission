@@ -1,0 +1,85 @@
+/* Mobile Animation Optimizations */
+
+/* Apply these optimizations for devices with screen width < 768px */
+@media (max-width: 767px) {
+  /* General optimizations - reduce all animation durations */
+  .animate-fadeIn,
+  .animate-fadeInUp,
+  .animate-fadeInDown,
+  .animate-fadeInLeft,
+  .animate-fadeInRight,
+  .animate-scaleUp {
+    animation-duration: 0.4s !important;
+  }
+  
+  /* Reduce animation distances */
+  @keyframes fadeInUp-mobile {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeInDown-mobile {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Use reduced movement animations */
+  .animate-fadeInUp {
+    animation-name: fadeInUp-mobile;
+  }
+  
+  .animate-fadeInDown {
+    animation-name: fadeInDown-mobile;
+  }
+  
+  /* Disable complex transforms for better performance */
+  .hover-lift:hover {
+    transform: none !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .hover-scale:hover {
+    transform: none !important;
+  }
+  
+  /* Light shadow instead of glow */
+  .hover-glow:hover {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3) !important;
+  }
+  
+  /* Make all transitions faster */
+  .transition-all {
+    transition-duration: 0.2s !important;
+  }
+  
+  /* Optimize pulse animations */
+  @keyframes pulse-mobile {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+  }
+  
+  .animate-pulse {
+    animation: pulse-mobile 2s infinite ease-in-out !important;
+  }
+  
+  /* Fix content shifting during animations */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Performance improvement: use transform instead of opacity+transform */
+  .hidden-ready {
+    transform: translateY(10px);
+  }
+}
+
+/* Reduce motion for users who have turned on that preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} 

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Analyzer</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      html, body, #root {
+        background-color: #f1f5f9 !important;
+        min-height: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #f1f5f9;
+        z-index: -100;
+      }
+      
+      /* Ensure content is visible */
+      .bg-background {
+        background-color: #f1f5f9 !important;
+      }
+      
+      .bg-white {
+        background-color: #ffffff !important;
+      }
+      
+      /* Force opaque backgrounds for cards */
+      .card, .bg-white, [class*="py-"] {
+        background-color: #ffffff !important;
+        opacity: 1 !important;
+      }
+      
+      .bg-primary {
+        background-color: #5b21b6 !important;
+        opacity: 1 !important;
+      }
+      
+      /* Fix GSAP opacity issues */
+      [style*="opacity"] {
+        opacity: 1 !important;
+      }
+
+      /* Ensure buttons are visible */
+      .btn-primary, .btn-outline, .btn-secondary, 
+      a[href="/login"], a[href="/register"] {
+        display: inline-block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      .btn-primary {
+        background-color: #5b21b6 !important;
+        color: white !important;
+      }
+
+      .btn-outline {
+        border: 2px solid #e5e7eb !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

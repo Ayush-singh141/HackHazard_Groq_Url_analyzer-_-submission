@@ -1,0 +1,65 @@
+/* Style overrides to fix transparency issues */
+
+/* Force solid backgrounds */
+.bg-background {
+  background-color: #f1f5f9 !important;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+/* Override any GSAP-applied opacity styles */
+[style*="opacity"] {
+  opacity: 1 !important;
+}
+
+/* Ensure decorative elements don't cause transparency issues */
+.opacity-20,
+.opacity-30,
+.opacity-10 {
+  z-index: -100 !important;
+}
+
+/* Move background decorations to a lower z-index */
+.absolute.inset-0 {
+  z-index: -100 !important;
+}
+
+/* Completely hide problematic decorative elements */
+.filter.blur-3xl {
+  opacity: 0.05 !important;
+  z-index: -999 !important;
+}
+
+/* Force solid backgrounds for cards */
+.card {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Make sure the hero section has a solid background */
+[class*="py-20"],
+[class*="py-32"] {
+  background-color: #f1f5f9 !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Fix for flex container transparency */
+.flex-grow {
+  background-color: #f1f5f9 !important;
+  opacity: 1 !important;
+}
+
+/* Fix for navbar */
+.bg-white.shadow-md {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Fix for GSAP transform issues */
+[style*="transform"] {
+  transform: none !important;
+} 

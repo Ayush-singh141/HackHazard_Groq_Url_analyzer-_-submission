@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="URL Analyzer with AI Chat - Analyze any website content and chat with AI about it"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>URL Analyzer with GROQ AI</title>
+    
+    <!-- Preconnect to API -->
+    <link rel="preconnect" href="https://hackhazard-groq-url-analyzer.onrender.com">
+    
+    <!-- Animation diagnostic script -->
+    <script>
+      window.checkGSAP = function() {
+        console.log('GSAP global:', window.gsap ? 'Available' : 'Not available');
+        if (window.gsap) {
+          console.log('GSAP version:', window.gsap.version);
+          console.log('ScrollTrigger plugin:', window.ScrollTrigger ? 'Available' : 'Not available');
+        }
+        
+        // Test animation
+        const testEl = document.createElement('div');
+        testEl.style.width = '10px';
+        testEl.style.height = '10px';
+        testEl.style.position = 'fixed';
+        testEl.style.bottom = '10px';
+        testEl.style.right = '10px';
+        testEl.style.background = 'red';
+        testEl.style.zIndex = '9999';
+        document.body.appendChild(testEl);
+        
+        if (window.gsap) {
+          window.gsap.to(testEl, {
+            opacity: 0, 
+            duration: 2, 
+            onComplete: function() {
+              document.body.removeChild(testEl);
+              console.log('Test animation completed successfully!');
+            }
+          });
+          console.log('Test animation started');
+        } else {
+          console.log('Cannot run test animation - GSAP not available');
+        }
+      }
+      
+      // Display message about the diagnostic tool
+      console.log('Animation diagnostic tool available. Run window.checkGSAP() to test GSAP.');
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html> 

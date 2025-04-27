@@ -1,0 +1,100 @@
+/* Direct component fixes to ensure visibility */
+
+/* Ensure card components are visible */
+.card, 
+[class*="card"],
+.bg-white {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Fix for any SVG components */
+svg {
+  opacity: 1 !important;
+}
+
+/* Fix for toast container */
+.fixed.bottom-5 > div {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Fix for navbar */
+nav.sticky {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Fix for buttons in navigation */
+.btn-primary, 
+.btn-outline,
+.btn-secondary {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+}
+
+/* Fix for login and signup buttons */
+a[href="/login"],
+a[href="/register"],
+a.btn-primary,
+a.btn-outline {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.btn-primary {
+  background-color: #5b21b6 !important;
+  color: white !important;
+}
+
+.btn-outline {
+  border: 2px solid #e5e7eb !important;
+  background-color: transparent !important;
+}
+
+/* Fix for input components */
+input, textarea, select, button {
+  opacity: 1 !important;
+}
+
+/* Ensure spinner is visible */
+.animate-spin {
+  animation: spin 1s linear infinite !important;
+  opacity: 1 !important;
+}
+
+/* Fix for footer */
+footer {
+  background-color: #111827 !important;
+  opacity: 1 !important;
+}
+
+/* Force opacity for all interactive elements */
+a, button, [role="button"] {
+  opacity: 1 !important;
+}
+
+/* Fix for all container divs */
+.container {
+  opacity: 1 !important;
+}
+
+/* Fix for homepage elements */
+.bg-background {
+  background-color: #f1f5f9 !important;
+  opacity: 1 !important;
+}
+
+/* Fix for absolute positioned elements */
+.absolute {
+  opacity: 0.1 !important;
+}
+
+/* Essential elements that must remain visible */
+h1, h2, h3, p, span, div {
+  opacity: 1 !important;
+} 
